@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>MEDIALEX - Carte des médias et positionnement politique</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <a href="https://medialab.sciencespo.fr/" target="_blank"><img id="logo" src="images/medialab.png" alt="logo médialab"/></a>
+    <h1>MEDIALEX &mdash; Carte des médias et positionnement politique</h1>
+    <div id="sidebar">
+      <div id="legend">
+        <p>La <b>taille</b> de chaque média représente :
+          <select id="edit-size" name="size"></select>
+        </p>
+
+        <p id="color">La <b>couleur</b> des médias indique leur :
+          <select id="edit-color" name="color"><option>&nbsp;</option></select>
+        </p>
+        <ul id="legend-colors"></ul>
+
+        <p id="heatmap">Affiche une <b>heatmap</b> des médias cités dans les tweets d'un corpus :
+          <select id="edit-halo" name="halo">
+            <option value="">&nbsp;</option>
+          </select>
+        </p>
+
+        <div id="histogram"></div>
+        <div id="histogram-hover"></div>
+        <div id="histogram-legend"></div>
+        <div id="histogram-tooltip" style="display: none"></div>
+
+      </div>
+      <div id="explications">
+        <p id="helpclick">
+          <b>Cliquez</b> sur un média pour voir ses infos,<br/>
+          <b>double-cliquez</b> pour le visiter.
+        </p>
+
+        <a id="media_link" href="" target="_blank"><h3 id="media_name"></h3></a>
+        <ul id="media_metadata"></ul>
+      </div>
+    </div>
+
+    <div id="loader" class="homepage"><img src="images/loader.gif" alt="loading network..."></div>
+    <div id="sigma" class="homepage"></div>
+    <div id="interact">
+      <div id="sigma-buttons">
+        <button id="regscreen" class="tooltip" tooltip="reduce to window">
+          <img src="images/exit-fullscreen.svg" alt="exit-fullscreen" />
+        </button>
+        <button id="fullscreen" class="tooltip" tooltip="maximize to full screen">
+          <img src="images/fullscreen.svg" alt="fullscreen" />
+        </button>
+        <button id="zoom-out" class="tooltip" tooltip="zoom out">
+          <img src="images/zoom-out.svg" alt="zoom out" />
+        </button>
+        <button id="zoom-in" class="tooltip" tooltip="zoom in">
+          <img src="images/zoom-in.svg" alt="zoom in" />
+        </button>
+        <button id="zoom-reset" class="tooltip" tooltip="recenter &amp; reset zoom">
+          <img src="images/reset-zoom.svg" alt="reset-zoom" />
+        </button>
+      </div>
+      <div id="search">
+        <input type="search" id="search-input" list="suggestions" placeholder="chercher…" class="tooltip" tooltip="chercher un acteur spécifique du réseau" />
+        <img id="search-icon" src="images/search.svg" alt="chercher un acteur spécifique du réseau" />
+        <datalist id="suggestions"><option>&nbsp;</option></datalist>
+      </div>
+    </div>
+
+    <script src="build/bundle.js"></script>
+  </body>
+</html>
